@@ -1,0 +1,27 @@
+{
+  "name": "devcoder-xyz/php-validator",
+  "description": "Fast,extensible and simple validation classes to validate any data.",
+  "type": "package",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "F.Michel",
+      "email": "dev@devcoder.xyz"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DevCoder\\Validator\\": "src",
+      "Test\\DevCoder\\Validator\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=7.3",
+    "psr/http-message": "^1.0",
+    "ext-json": "*",
+    "ext-ctype": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.4"
+  }
+}
