@@ -7,12 +7,12 @@ namespace DevCoder\Validator\Assert;
 use function filter_var;
 use function is_string;
 
-class Email extends AbstractValidator
+final class Email extends AbstractValidator
 {
     /**
      * @var string
      */
-    private $message = '{{ value }} is not a valid email address.';
+    private string $message = '{{ value }} is not a valid email address.';
 
     public function validate($value): bool
     {

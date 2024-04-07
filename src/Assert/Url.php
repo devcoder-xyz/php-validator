@@ -7,12 +7,12 @@ namespace DevCoder\Validator\Assert;
 use function filter_var;
 use function is_string;
 
-class Url extends AbstractValidator
+final class Url extends AbstractValidator
 {
     /**
      * @var string
      */
-    private $message = '{{ value }} is not a valid URL.';
+    private string $message = '{{ value }} is not a valid URL.';
 
     public function validate($value): bool
     {

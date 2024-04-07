@@ -6,12 +6,9 @@ namespace DevCoder\Validator\Assert;
 
 use function ctype_alnum;
 
-class Alphanumeric extends AbstractValidator
+final class Alphanumeric extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $message = 'This value should be of type {{ type }}.';
+    private string $message = 'This value should be of type {{ type }}.';
 
     public function validate($value): bool
     {

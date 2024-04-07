@@ -8,23 +8,13 @@ use function ctype_digit;
 use function is_int;
 use function strval;
 
-class Integer extends AbstractValidator
+final class Integer extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $invalidMessage = 'This value should be of type {{ type }}.';
-    private $minMessage = '{{ value }} should be {{ limit }} or more.';
-    private $maxMessage = '{{ value }} should be {{ limit }} or less.';
-
-    /**
-     * @var int|null
-     */
-    private $min;
-    /**
-     * @var int|null
-     */
-    private $max;
+    private string $invalidMessage = 'This value should be of type {{ type }}.';
+    private string $minMessage = '{{ value }} should be {{ limit }} or more.';
+    private string $maxMessage = '{{ value }} should be {{ limit }} or less.';
+    private ?int $min = null;
+    private ?int $max = null;
 
     public function validate($value): bool
     {

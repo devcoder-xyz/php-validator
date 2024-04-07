@@ -2,18 +2,33 @@
 
 namespace DevCoder\Validator\Assert;
 
+/**
+ * Class AbstractValidator
+ *
+ * This abstract class implements the ValidatorInterface and provides basic error handling functionality.
+ */
 abstract class AbstractValidator implements ValidatorInterface
 {
-    /**
-     * @var string|null
-     */
-    protected $error;
+    protected ?string $error = null;
 
+    /**
+     * Get the error message
+     *
+     * @return string|null
+     */
     public function getError(): ?string
     {
         return $this->error;
     }
 
+
+    /**
+     * Set the error message by replacing placeholders with values from the context array
+     *
+     * @param string $message The error message with placeholders
+     * @param array $context An associative array containing values to replace the placeholders
+     * @return void
+     */
     protected function error(string $message, array $context): void
     {
         $replace = [];

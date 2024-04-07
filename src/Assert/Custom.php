@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace DevCoder\Validator\Assert;
 
-class Custom extends AbstractValidator
+final class Custom extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $message = '"{{ value }}" is not valid';
+    private string $message = '"{{ value }}" is not valid';
     /**
      * @var callable
      */

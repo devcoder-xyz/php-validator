@@ -6,16 +6,10 @@ namespace DevCoder\Validator\Assert;
 
 use function in_array;
 
-class Choice extends AbstractValidator
+final class Choice extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $message = '{{ value }} is not a valid email address.';
-    /**
-     * @var array
-     */
-    private $choices;
+    private string $message = '{{ value }} is not a valid email address.';
+    private array $choices;
 
     public function __construct(array $choices)
     {

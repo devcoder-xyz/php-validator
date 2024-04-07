@@ -10,32 +10,13 @@ use function implode;
 use function in_array;
 use function is_int;
 
-class Psr7UploadFile extends AbstractValidator
+final class Psr7UploadFile extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $message = 'This value should be instance of {{ class }}.';
-
-    /**
-     * @var string
-     */
-    private $maxSizeMessage = 'The file is too large ({{ size }} MB. Allowed maximum size is {{ limit }} MB';
-
-    /**
-     * @var string
-     */
-    private $mimeTypesMessage = 'The mime type of the file is invalid ({{ type }}). Allowed mime types are {{ types }}.';
-
-    /**
-     * @var int|null
-     */
-    private $maxSize;
-
-    /**
-     * @var array
-     */
-    public $mimeTypes = [];
+    private string $message = 'This value should be instance of {{ class }}.';
+    private string $maxSizeMessage = 'The file is too large ({{ size }} MB. Allowed maximum size is {{ limit }} MB';
+    private string $mimeTypesMessage = 'The mime type of the file is invalid ({{ type }}). Allowed mime types are {{ types }}.';
+    private ?int $maxSize = null;
+    public array $mimeTypes = [];
 
     public function validate($value): bool
     {

@@ -15,22 +15,19 @@ use function is_string;
 use function sprintf;
 use function trim;
 
-class Validation
+final class Validation
 {
     /**
      * @var array<string,array>
      */
-    private $validators;
+    private array $validators;
 
     /**
      * @var array<string,string>
      */
-    private $errors = [];
+    private array $errors = [];
 
-    /**
-     * @var array
-     */
-    private $data = [];
+    private array $data = [];
 
     public function __construct(array $fieldValidators)
     {
@@ -42,6 +39,12 @@ class Validation
         }
     }
 
+    /**
+     * Validate the server request data.
+     *
+     * @param ServerRequestInterface $request The server request to validate
+     * @return bool
+     */
     public function validate(ServerRequestInterface $request): bool
     {
         $data = array_map(function ($value) {
@@ -54,6 +57,12 @@ class Validation
         return $this->validateArray($data);
     }
 
+    /**
+     * Validate an array of data using a set of validators.
+     *
+     * @param array $data The array of data to be validated
+     * @return bool
+     */
     public function validateArray(array $data): bool
     {
         $this->data = $data;
@@ -92,14 +101,23 @@ class Validation
         return $this->data;
     }
 
+    /**
+     * Add an error for a specific field.
+     *
+     * @param string $field The field for which the error occurred
+     * @param string $message The error message
+     * @return void
+     */
     private function addError(string $field, string $message): void
     {
         $this->errors[$field][] = $message;
     }
 
     /**
-     * @param string $field
-     * @param array<ValidatorInterface> $validators
+     * Add a validator for a specific field.
+     *
+     * @param string $field The field to validate
+     * @param array<ValidatorInterface> $validators The validators to apply
      * @return void
      */
     private function addValidator(string $field, array $validators): void

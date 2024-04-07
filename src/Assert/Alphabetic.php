@@ -6,12 +6,9 @@ namespace DevCoder\Validator\Assert;
 
 use function ctype_alpha;
 
-class Alphabetic extends AbstractValidator
+final class Alphabetic extends AbstractValidator
 {
-    /**
-     * @var string
-     */
-    private $message = 'This value should be of type {{ type }}.';
+    private string $message = 'This value should be of type {{ type }}.';
 
     public function validate($value): bool
     {
