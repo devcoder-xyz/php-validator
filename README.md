@@ -3,6 +3,8 @@
 
 PHP Validator is a fast, extensible, and simple PHP validation library that allows you to easily validate various types of data.
 
+[![Latest Stable Version](http://poser.pugx.org/devcoder-xyz/php-validator/v)](https://packagist.org/packages/devcoder-xyz/php-validator) [![Total Downloads](http://poser.pugx.org/devcoder-xyz/php-validator/downloads)](https://packagist.org/packages/devcoder-xyz/php-validator) [![Latest Unstable Version](http://poser.pugx.org/devcoder-xyz/php-validator/v/unstable)](https://packagist.org/packages/devcoder-xyz/php-validator) [![License](http://poser.pugx.org/devcoder-xyz/php-validator/license)](https://packagist.org/packages/devcoder-xyz/php-validator) [![PHP Version Require](http://poser.pugx.org/devcoder-xyz/php-validator/require/php)](https://packagist.org/packages/devcoder-xyz/php-validator)
+
 ## Installation
 
 You can install this library via [Composer](https://getcomposer.org/). Ensure your project meets the minimum PHP version requirement of 7.4.
